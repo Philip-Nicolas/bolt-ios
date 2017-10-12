@@ -1,0 +1,7 @@
+Phone Outbound Commands
+	- setLEDState
+	- disconnect
+
+Arduino Outbound Commands
+	- buttonPressed
+		- buttonID
