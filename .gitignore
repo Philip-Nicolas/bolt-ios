@@ -2,4 +2,5 @@
 *.DS_STORE
 
 # user config/settings files and directories
-bolt.xcodeproj/project.xcworkspace/xcuserdata/
+bolt.xcodeproj/project.xcworkspace/xcuserdata
+bolt.xcodeproj/xcuserdata/
