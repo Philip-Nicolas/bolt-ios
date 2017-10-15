@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,28 +71,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAd-8s-jhE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                <rect key="frame" x="166.5" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-Gn-hcl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-Gn-hcl">
                                 <rect key="frame" x="0.0" y="29" width="375" height="212"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="GXs-Zi-tZ7"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SAd-8s-jhE" firstAttribute="leading" secondItem="gOo-fE-5Ch" secondAttribute="leadingMargin" constant="-16" id="3bS-Hw-oSc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SAd-8s-jhE" secondAttribute="trailing" constant="-16" id="6Tw-cy-3wG"/>
                             <constraint firstAttribute="topMargin" secondItem="SAd-8s-jhE" secondAttribute="top" id="7Ib-xc-Lz9"/>
-                            <constraint firstItem="p9e-Gn-hcl" firstAttribute="leading" secondItem="gOo-fE-5Ch" secondAttribute="leadingMargin" constant="-16" id="Ac9-NU-8vb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p9e-Gn-hcl" secondAttribute="trailing" constant="-16" id="HVc-qJ-uxT"/>
-                            <constraint firstItem="p9e-Gn-hcl" firstAttribute="centerX" secondItem="gOo-fE-5Ch" secondAttribute="centerX" id="I1h-5L-0AA"/>
                             <constraint firstItem="SAd-8s-jhE" firstAttribute="centerX" secondItem="gOo-fE-5Ch" secondAttribute="centerX" id="a0B-Ca-d4z"/>
-                            <constraint firstItem="p9e-Gn-hcl" firstAttribute="top" secondItem="SAd-8s-jhE" secondAttribute="bottom" constant="8" id="glx-UL-s1J"/>
                         </constraints>
                     </view>
                     <connections>
