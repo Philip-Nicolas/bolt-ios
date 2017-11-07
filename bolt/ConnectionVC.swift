@@ -36,6 +36,8 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
         
         alert.addAction (UIAlertAction (title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         alert.dismiss(animated: true, completion: nil)
+        
+        self.present (alert, animated: true, completion: nil)
     }
     
     func sendBTOffAlert () {
