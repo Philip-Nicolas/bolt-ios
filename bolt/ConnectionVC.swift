@@ -9,9 +9,12 @@ import UIKit
 import CoreBluetooth
 
 class ConnectionVC: UIViewController, CBCentralManagerDelegate {
+    var centralManager : CBCentralManager?
     
     override func viewDidLoad() {
         super.viewDidLoad ()
+        
+        centralManager = CBCentralManager (delegate: self, queue: nil)
     }
     
     override func viewDidAppear (_ animated: Bool) {
@@ -20,37 +23,26 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
     func centralManagerDidUpdateState (_ central: CBCentralManager) {
         switch (central.state) {
         case CBManagerState.poweredOn:
+            centralManager!.scanForPeripherals (withServices: nil, options: nil)
             break
         case CBManagerState.poweredOff:
-            sendBTOffAlert ()
+            sendAlert(title: "Bluetooth Off", message: "Please enable Bluetooth in Settings, or in the Control Center.", options: ("Ok", nil), ("Go to Settings", nil))
             break
         case CBManagerState.unsupported:
-            sendBTUnsupportedAlert ()
+            sendAlert(title: "Bluetooth Unsupported", message: "Bluetooth is unsupported on your device. Sorry", options: ("Ok", nil))
             break
         default: break
         }
     }
     
-    func sendBTUnsupportedAlert () {
-        let alert = UIAlertController (title: "Bluetooth Unsupported", message: "Bluetooth is unsupported on your device. Sorry.", preferredStyle:UIAlertControllerStyle.alert)
+    func sendAlert (title: String, message: String, options: (title: String, handler: (() -> Void)?)...) {
+        let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        for option in options {
+            alert.addAction(UIAlertAction (title: option.title, style: UIAlertActionStyle.default, handler: { (action) in
+                alert.dismiss(animated: true, completion: option.handler)
+            }))
+        }
         
-        alert.addAction (UIAlertAction (title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        alert.dismiss(animated: true, completion: nil)
-        
-        self.present (alert, animated: true, completion: nil)
-    }
-    
-    func sendBTOffAlert () {
-        let alert = UIAlertController (title: "Bluetooth Off", message: "Please enable Bluetooth in Settings, or in the Control Center.", preferredStyle:UIAlertControllerStyle.alert)
-        
-        alert.addAction (UIAlertAction (title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss (animated: true, completion: nil)
-        }))
-        
-        alert.addAction (UIAlertAction (title: "Go to Settings", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss (animated: true, completion: nil)
-        }))
-        
-        self.present (alert, animated: true, completion: nil)
+        alert.present (self, animated: true)
     }
 }
