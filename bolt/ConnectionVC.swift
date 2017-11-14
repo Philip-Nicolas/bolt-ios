@@ -38,7 +38,8 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = advertisementData [CBAdvertisementDataLocalNameKey] as? String {
             if name == "BT05" {
-                sendAlert(title: "Board Found!", message: "now what?", options: ("Ok", nil))
+                let newViewController = self.storyboard!.instantiateViewController(withIdentifier: "CMVC") as! ConnectedMenuVC
+                self.present(newViewController, animated: true, completion: nil)
             }
         }
     }

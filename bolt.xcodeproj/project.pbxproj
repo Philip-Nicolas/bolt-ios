@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2106121FBBA4B300CAD9BF /* ConnectedMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2106111FBBA4B300CAD9BF /* ConnectedMenuVC.swift */; };
 		F843941E1F5899BB00B0F279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843941D1F5899BB00B0F279 /* AppDelegate.swift */; };
 		F84394231F5899BB00B0F279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84394211F5899BB00B0F279 /* Main.storyboard */; };
 		F84394261F5899BB00B0F279 /* bolt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F84394241F5899BB00B0F279 /* bolt.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA2106111FBBA4B300CAD9BF /* ConnectedMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedMenuVC.swift; sourceTree = "<group>"; };
 		F843941A1F5899BB00B0F279 /* bolt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bolt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F843941D1F5899BB00B0F279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84394221F5899BB00B0F279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				F84394441F59165500B0F279 /* ConnectionTipsVC.swift */,
 				F84394421F58B06600B0F279 /* UIViewExtention.swift */,
 				F84394211F5899BB00B0F279 /* Main.storyboard */,
+				AA2106111FBBA4B300CAD9BF /* ConnectedMenuVC.swift */,
 				F84394271F5899BB00B0F279 /* Assets.xcassets */,
 				F84394291F5899BB00B0F279 /* LaunchScreen.storyboard */,
 				F843942C1F5899BB00B0F279 /* Info.plist */,
@@ -214,6 +217,7 @@
 				F84394261F5899BB00B0F279 /* bolt.xcdatamodeld in Sources */,
 				F843941E1F5899BB00B0F279 /* AppDelegate.swift in Sources */,
 				F84394411F589AA000B0F279 /* ConnectionVC.swift in Sources */,
+				AA2106121FBBA4B300CAD9BF /* ConnectedMenuVC.swift in Sources */,
 				F84394451F59165500B0F279 /* ConnectionTipsVC.swift in Sources */,
 				F84394431F58B06600B0F279 /* UIViewExtention.swift in Sources */,
 			);
