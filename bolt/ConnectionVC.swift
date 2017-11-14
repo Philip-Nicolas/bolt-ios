@@ -8,8 +8,9 @@
 import UIKit
 import CoreBluetooth
 
-class ConnectionVC: UIViewController, CBCentralManagerDelegate {
+class ConnectionVC: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager : CBCentralManager?
+    var testPeripheral : CBPeripheral? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad ()
@@ -35,11 +36,20 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
         }
     }
     
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        let CMVC = self.storyboard!.instantiateViewController(withIdentifier: "CMVC") as! ConnectedMenuVC
+    //    CMVC.addBoard (board: peripheral)
+        
+        self.present(CMVC, animated: true, completion: nil)
+    }
+    
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = advertisementData [CBAdvertisementDataLocalNameKey] as? String {
             if name == "BT05" {
-                let newViewController = self.storyboard!.instantiateViewController(withIdentifier: "CMVC") as! ConnectedMenuVC
-                self.present(newViewController, animated: true, completion: nil)
+                testPeripheral = peripheral
+                testPeripheral!.delegate = self
+                
+                centralManager?.connect(testPeripheral!, options: nil)
             }
         }
     }

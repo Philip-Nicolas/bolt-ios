@@ -8,9 +8,16 @@
 
 import Foundation
 import UIKit
+import CoreBluetooth
 
 class ConnectedMenuVC: UIViewController {
+    var board: CBPeripheral?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func addBoard (board: CBPeripheral) {
+        self.board = board
     }
 }
