@@ -35,6 +35,14 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
         }
     }
     
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        if let name = advertisementData [CBAdvertisementDataLocalNameKey] as? String {
+            if name == "BT05" {
+                sendAlert(title: "Board Found!", message: "now what?", options: ("Ok", nil))
+            }
+        }
+    }
+    
     func sendAlert (title: String, message: String, options: (title: String, handler: (() -> Void)?)...) {
         let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         for option in options {
@@ -43,6 +51,6 @@ class ConnectionVC: UIViewController, CBCentralManagerDelegate {
             }))
         }
         
-        alert.present (self, animated: true)
+        self.present (alert, animated: true)
     }
 }
